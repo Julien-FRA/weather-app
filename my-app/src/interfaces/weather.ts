@@ -1,5 +1,5 @@
-export interface WeatherInterface {
-  lat: number,
-  long: number,
-  key: string,
+export interface weatherInterface {
+  lat: number;
+  long: number;
+  key: string;
 }

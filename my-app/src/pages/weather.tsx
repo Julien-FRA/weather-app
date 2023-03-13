@@ -1,20 +1,39 @@
-import React from 'react'
-import { WeatherInterface } from "../interfaces/weather";
-import { getWeather } from '../services/requestApiWeather';
+import React, { useState, useEffect } from "react";
+import { weatherInterface } from "../interfaces/weather";
+import { displayWeather } from "../types/weather";
+import { WeatherClass } from "../class/Weather";
 import { API_TOKEN } from "../utils/config";
+import WeatherContainer from "../components/container/WeatherContainer";
 
-const weather: WeatherInterface = {
-  lat: 45,
-  long: 54,
-  key: API_TOKEN!
-}
-
-const weatherInfo = getWeather(weather.lat, weather.long, weather.key);
+const coords: weatherInterface = {
+  lat: 44.34,
+  long: 10.99,
+  key: API_TOKEN!,
+};
 
 const Weather = () => {
-  return (
-    <div>weather card</div>
-  )
-}
+  const [weather, setWeather] = useState<displayWeather[]>([]);
 
-export default Weather
+  // const weatherInfo = async () => {
+  //   const response = await new WeatherClass(
+  //     coords.lat,
+  //     coords.long,
+  //     coords.key
+  //   ).getWeather();
+  //   setWeather(response.main);
+  // };
+
+  // useEffect(() => {
+  //   weatherInfo();
+  // }, []);
+
+  // return <div>{weather.map(info => (
+  //     <WeatherCard />
+  // ))}</div>;
+
+  return (
+    <WeatherContainer />
+  )
+};
+
+export default Weather;
