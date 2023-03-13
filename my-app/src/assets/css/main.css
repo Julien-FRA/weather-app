@@ -3,7 +3,8 @@ body {
   color: white;
 }
 
-h1 {
+h1,
+p {
   margin: 0rem;
 }
 
@@ -16,7 +17,8 @@ h1 {
   align-items: center;
   margin: 2rem auto;
   border-radius: 2rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   background: linear-gradient(to right, #344b76, #6fa3e1);
   overflow: hidden;
 }
@@ -24,7 +26,7 @@ h1 {
 .list {
   position: relative;
   width: 100%;
-  height: 80px;
+  height: 100px;
 }
 
 .list-figure {
@@ -43,6 +45,29 @@ h1 {
 .list-info {
   position: absolute;
   top: 50%;
-  left: 25px;
   transform: translateY(-50%);
+  padding: 1rem;
+}
+
+.list-group {
+  display: flex;
+}
+
+.list-name {
+  margin-right: 0.5rem;
+}
+
+.list-name,
+.list-hour,
+.list-temp,
+.list-min,
+.list-max {
+  font-size: 18px;
+}
+
+.list-temp,
+.list-min,
+.list-max {
+  font-weight: bold;
+  margin-right: 0.5rem;
 }

@@ -1,5 +1,4 @@
-export interface weatherInterface {
+export interface weatherCoords {
   lat: number;
   long: number;
-  key: string;
 }
