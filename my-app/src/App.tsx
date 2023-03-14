@@ -1,11 +1,13 @@
 import React from "react";
-import Weather from "./pages/weather";
 import "./assets/css/main.css";
+import Router from "./Router";
+import Header from "./components/inc/Header";
 
 function App() {
   return (
     <div className="App">
-      <Weather />
+      <Header />
+      <Router />
     </div>
   );
 }
