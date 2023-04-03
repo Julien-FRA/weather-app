@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
+import { addCity } from "../services/weatherRequest";
 
 const Form = () => {
-  const [name, setName] = useState<string>();
   const [long, setLong] = useState<string>();
   const [lat, setLat] = useState<string>();
   const [error, setError] = useState<string>();
@@ -9,13 +9,6 @@ const Form = () => {
 
   const onSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
-
-    // !name ?? setError('Veuillez rentrer le nom de la ville');
-    if (!name) {
-      setError("Veuillez rentrer le nom de la ville");
-      setSuccess("");
-      return;
-    }
 
     if (!long) {
       setError("Veuillez rentrer la longitude");
@@ -31,7 +24,8 @@ const Form = () => {
 
     setError("");
     setSuccess("Formulaire envoyé");
-    console.log(name, long, lat);
+    addCity(lat, long);
+    console.log(long, lat);
   };
 
   error !== "" ?? (
@@ -51,15 +45,6 @@ const Form = () => {
       <form className="container-form">
         {error}
         {success}
-        <div className="form-control">
-          <input
-            type="text"
-            className="form-input"
-            placeholder="Ville..."
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
         <div className="form-control">
           <input
             type="text"
